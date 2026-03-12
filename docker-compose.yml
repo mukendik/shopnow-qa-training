@@ -1,0 +1,13 @@
+services:
+  backend:
+    build: ./backend
+    container_name: shopnow-backend
+    ports:
+      - "8080:8000"   # externe : 8080, interne : 8000
+  frontend:
+    image: nginx:stable-alpine
+    container_name: shopnow-frontend
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    ports:
+      - "8001:80"

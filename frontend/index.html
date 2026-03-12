@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>ShopNow</title>
+</head>
+<body>
+    <h1>Bienvenue sur ShopNow !</h1>
+    <h2>Produits disponibles :</h2>
+    <ul id="products"></ul>
+
+    <script>
+        fetch("http://localhost:8080/products")
+          .then(response => response.json())
+          .then(products => {
+              const ul = document.getElementById("products");
+
+              products.forEach(product => {
+                  const li = document.createElement("li");
+                  li.textContent = product.name + " - " + product.price + " €";
+                  ul.appendChild(li);
+      });
+  })
+  .catch(error => console.error("Erreur :", error));
+    </script>
+</body>
+</html>
