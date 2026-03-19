@@ -1,17 +1,19 @@
 # Dockerfile
-FROM python:3.11-slim
+# Utiliser Node.js 20 Alpine (léger)
+FROM node:20-alpine
 
-# Définit le répertoire de travail dans le container
+# Définir le répertoire de travail
 WORKDIR /app
 
-# Copie le fichier des dépendances dans le container
-COPY requirements.txt .
+# Copier les fichiers de dépendances et installer
+COPY package.json package-lock.json* ./
+RUN npm install --production
 
-# Installe les dépendances Python
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copie tous les fichiers du projet dans le container
+# Copier le reste du code source
 COPY . .
 
-# Commande pour lancer l’application
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+# Exposer le port que le backend utilisera
+EXPOSE 3000
+
+# Lancer l'application
+CMD ["npm", "start"]

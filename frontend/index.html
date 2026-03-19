@@ -10,7 +10,7 @@
     <ul id="products"></ul>
 
     <script>
-        fetch("http://localhost:28080/products")
+        fetch("http://localhost:3000/products")
           .then(response => response.json())
           .then(products => {
               const ul = document.getElementById("products");
