@@ -1,14 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ShopNow</title>
-</head>
-<body>
-    <h1>Bienvenue sur ShopNow !</h1>
-    <h2>Produits disponibles :</h2>
-    <ul id="products"></ul>
+    <!--CSS et Boostrap CSS-->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!--Header-->
+    <header id="header"></header>
 
+<<<<<<< HEAD
     <script>
         fetch("http://localhost:3000/products")
           .then(response => response.json())
@@ -25,3 +34,27 @@
     </script>
 </body>
 </html>
+=======
+    <!--Main-->
+    <main>
+      <!--Link des pages-->
+      <div class="mt-5">
+        <div id="connexion"></div>
+        <div class="d-flex justify-content-center align-items-center">
+          <p class="m-2">Nouveau ?</p>
+          <a class="createaccount" href="createaccount.html">Créer un compte</a>
+        </div>
+      </div>
+    </main>
+    <!--Footer-->
+    <footer id="footer"></footer>
+    <!--JS et Boostrap JS-->
+    <script src="app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+>>>>>>> 81419686d93402589eface43e829947854d5088b
