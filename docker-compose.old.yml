@@ -3,7 +3,7 @@ services:
     build: ./backend
     container_name: shopnow-backend
     ports:
-      - "8080:8000"   # externe : 8080, interne : 8000
+      - "28080:8000"   # externe : 8080, interne : 8000
   frontend:
     image: nginx:stable-alpine
     container_name: shopnow-frontend

@@ -23,6 +23,24 @@
     <!--Header-->
     <header id="header"></header>
 
+<<<<<<< HEAD
+    <script>
+        fetch("http://localhost:3000/products")
+          .then(response => response.json())
+          .then(products => {
+              const ul = document.getElementById("products");
+
+              products.forEach(product => {
+                  const li = document.createElement("li");
+                  li.textContent = product.name + " - " + product.price + " €";
+                  ul.appendChild(li);
+      });
+  })
+  .catch(error => console.error("Erreur :", error));
+    </script>
+</body>
+</html>
+=======
     <!--Main-->
     <main>
       <!--Link des pages-->
@@ -79,3 +97,4 @@
     ></script>
   </body>
 </html>
+>>>>>>> 81419686d93402589eface43e829947854d5088b

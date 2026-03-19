@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: shopnow_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: shopnow
+      POSTGRES_PASSWORD: shopnowpassword
+      POSTGRES_DB: shopnow_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ../db/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql
+  backend:
+    build: ../backend
+    container_name: shopnow_backend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+  frontend:
+    image: nginx:alpine
+    container_name: shopnow_frontend
+    ports:
+      - "8080:80"
+    volumes:
+      - ../frontend:/usr/share/nginx/html:ro
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
