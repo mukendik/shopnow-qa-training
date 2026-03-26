@@ -1,26 +1,13 @@
-<!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page d'inscription</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body class="bg-info">
-    <div class="mt-4">
-      <h1 class="d-flex justify-content-center align-items-center row">
-        Inscrivez-vous sur ShopNow.
-      </h1>
-
+export function createAccounte() {
+  return `
+   
       <div class="d-flex justify-content-center align-items-center">
         <form
           class="border border-secondary p-5 rounded-5 border-opacity-25 w-25 bg-white"
         >
+        <p class="d-flex fw-bold justify-content-center align-items-center row">
+        Inscrivez-vous sur ShopNow
+        </p>
           <div class="mb-3 row">
             <label for="exampleInputEmail1" class="form-label">Nom </label>
             <input
@@ -89,8 +76,5 @@
             </button>
           </div>
         </form>
-      </div>
-    </div>
-    <script src="../createaccount.js"></script>
-  </body>
-</html>
+      </div>`;
+}
